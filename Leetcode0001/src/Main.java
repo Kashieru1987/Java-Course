@@ -16,23 +16,34 @@ public class Main {
         HashMap<Integer, Integer> numMap = new HashMap<Integer, Integer>();
         HashMap<Integer, Integer> dupeMap = new HashMap<Integer, Integer>(); //any more dupes are irrelevant, since only adding two values
 
-        // add all nums
+        // add all nums to maps
         for (int i = 0; i < nums.length; i++) {
             int currentNum = nums[i];
-            if (currentNum < target)
-                continue;
+
+            //optimisation if numbers are all positive, which it turns out they are not.
+//            if (currentNum > target)
+//                continue;
             if(numMap.containsKey(currentNum))
                 dupeMap.put(currentNum, i);
             numMap.putIfAbsent(currentNum, i);
         }
 
+//        System.out.println(numMap);
+//        System.out.println(dupeMap);
+
         List<Integer> numList = new ArrayList<Integer>(numMap.keySet());
         List<Integer> dupeList = new ArrayList<Integer>(dupeMap.keySet());
+
+//        System.out.println(numList);
+//        System.out.println(dupeList);
+
         for(int i = 0; i < numList.size(); i++) {
             int currentValue = numList.get(i);
             int wantedValue = target - currentValue;
 
             List<Integer> searchList = numList;
+
+            // use the dupemap if you need a dupe of the current value ie 3 + 3
             if(currentValue == wantedValue)
                 if(dupeMap.containsKey(currentValue))
                     return new int[] {numMap.get(currentValue), dupeMap.get(currentValue)};
