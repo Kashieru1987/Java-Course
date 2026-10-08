@@ -6,6 +6,23 @@
       <sourceFolder url="file://$MODULE_DIR$/Testing/Test001" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://C:/Program Files/Processing/app" />
+        </CLASSES>
+        <JAVADOC />
+        <NATIVE>
+          <root url="file://C:/Program Files/Processing/app" />
+        </NATIVE>
+        <SOURCES>
+          <root url="file://C:/Program Files/Processing/app" />
+          <root url="file://C:/Program Files/Processing/app/resources/tools/MovieMaker/src" />
+        </SOURCES>
+        <jarDirectory url="file://C:/Program Files/Processing/app" recursive="false" />
+        <jarDirectory url="file://C:/Program Files/Processing/app" recursive="false" type="SOURCES" />
+      </library>
+    </orderEntry>
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
