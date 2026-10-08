@@ -22,7 +22,9 @@ public class Main extends PApplet {
         final int lineEndX = lineStartX + lineLength;
         final int lineEndY = centreY;
 
-        line(lineStartX, lineStartY, lineStartX + lineLength, lineStartY);
+        ellipse(lineStartX, lineStartY, ellipseDiameter, ellipseDiameter);
+        ellipse(lineEndX, lineEndY, ellipseDiameter, ellipseDiameter);
+        line(lineStartX, lineStartY, lineEndX, lineEndY);
     }
     public void drawVerticalBar() {
         final int lineStartX = centreX;
@@ -30,8 +32,9 @@ public class Main extends PApplet {
         final int lineEndX = centreX;
         final int lineEndY = lineStartY + lineLength;
 
-
-        line(lineStartX, lineStartY, lineStartX, lineStartY + lineLength);
+        ellipse(lineStartX, lineStartY, ellipseDiameter, ellipseDiameter);
+        ellipse(lineEndX, lineEndY, ellipseDiameter, ellipseDiameter);
+        line(lineStartX, lineStartY, lineEndX, lineEndY);
     }
 
     public static void main(String[] args) {
