@@ -16,12 +16,14 @@ public class Main extends PApplet {
         drawVerticalBar();
     }
 
+    // for the horizontal line with the circles attached
     public void drawHorizontalBar() {
         final int lineStartX = centreX - lineLength/2;
         final int lineStartY = centreY;
         final int lineEndX = lineStartX + lineLength;
         final int lineEndY = centreY;
 
+        // important to draw the circles first, then the line, so the line is visible above it
         ellipse(lineStartX, lineStartY, ellipseDiameter, ellipseDiameter);
         ellipse(lineEndX, lineEndY, ellipseDiameter, ellipseDiameter);
         line(lineStartX, lineStartY, lineEndX, lineEndY);
@@ -32,6 +34,7 @@ public class Main extends PApplet {
         final int lineEndX = centreX;
         final int lineEndY = lineStartY + lineLength;
 
+        // important to draw the circles first, then the line, so the line is visible above it
         ellipse(lineStartX, lineStartY, ellipseDiameter, ellipseDiameter);
         ellipse(lineEndX, lineEndY, ellipseDiameter, ellipseDiameter);
         line(lineStartX, lineStartY, lineEndX, lineEndY);
@@ -41,6 +44,7 @@ public class Main extends PApplet {
         PApplet.main("Main");
     }
 
+    // required inside of a settings method over a setup method when outside of the processing IDE
     @Override
     public void settings() {
         size(frameWidth, frameHeight);
