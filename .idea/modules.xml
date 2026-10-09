@@ -14,6 +14,8 @@
       <module fileurl="file://$PROJECT_DIR$/Leetcode/Leetcode0003/Leetcode0003.iml" filepath="$PROJECT_DIR$/Leetcode/Leetcode0003/Leetcode0003.iml" />
       <module fileurl="file://$PROJECT_DIR$/Leetcode/Leetcode0004/Leetcode0004.iml" filepath="$PROJECT_DIR$/Leetcode/Leetcode0004/Leetcode0004.iml" />
       <module fileurl="file://$PROJECT_DIR$/Processing/Processing.iml" filepath="$PROJECT_DIR$/Processing/Processing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Processing/Week 1/Snake/Snake.iml" filepath="$PROJECT_DIR$/Processing/Week 1/Snake/Snake.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Processing/Week 1/Traffic Lights/Traffic Lights.iml" filepath="$PROJECT_DIR$/Processing/Week 1/Traffic Lights/Traffic Lights.iml" />
       <module fileurl="file://$PROJECT_DIR$/Processing/Week 1/Transform 2D/Transform 2D.iml" filepath="$PROJECT_DIR$/Processing/Week 1/Transform 2D/Transform 2D.iml" />
       <module fileurl="file://$PROJECT_DIR$/Processing/Week 1/Week 1.iml" filepath="$PROJECT_DIR$/Processing/Week 1/Week 1.iml" />
     </modules>

@@ -97,6 +97,7 @@ public class Main extends PApplet {
     @Override
     public void keyPressed() {
         String pressedKey = ("" + key).toUpperCase();
+        pressedKey.compareTo("A");
 
         // required to avoid flickering, cannot be handled like other inputs
         if(pressedKey.equals("H")) {
@@ -117,6 +118,11 @@ public class Main extends PApplet {
 
     public static void main(String[] args) {
         PApplet.main("Main");
+    }
+
+    @Override
+    public void setup() {
+        surface.setTitle("Assessed Processing Cross");
     }
 
     @Override
