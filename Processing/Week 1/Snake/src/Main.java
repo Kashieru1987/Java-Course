@@ -25,8 +25,8 @@ public class Main {
     private Main() {
         PApplet.main("Panel");
         this.setPanel(Panel.instance);
-        panel.addToDrawQueue(Test.drawSquare());
-        panel.addToDrawQueue(Test.drawCircle());
+        panel.addToDrawQueue(Test::drawSquare);
+        panel.addToDrawQueue(Test::drawCircle);
     }
 
     public static void main(String[] args) {

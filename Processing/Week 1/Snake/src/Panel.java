@@ -3,11 +3,17 @@ import processing.core.PApplet;
 
 import java.util.*;
 import java.util.function.Consumer;
+import java.util.function.Supplier;
 
 public class Panel extends PApplet {
 
     public volatile static Panel instance;
     private Queue<QueueItem<Consumer<PApplet>>> drawQueue;
+
+
+    public void addToDrawQueue(Supplier<QueueItem<Consumer<PApplet>>> item) {
+        addToDrawQueue(item.get());
+    }
 
     public void addToDrawQueue(QueueItem<Consumer<PApplet>> item) {
         drawQueue.add(item);
