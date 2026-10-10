@@ -1,10 +1,7 @@
 import Util.QueueItem;
 import processing.core.PApplet;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.PriorityQueue;
-import java.util.Queue;
+import java.util.*;
 import java.util.function.Consumer;
 
 public class Panel extends PApplet {
@@ -17,9 +14,7 @@ public class Panel extends PApplet {
     }
 
     public Panel() {
-        this.drawQueue = new PriorityQueue<QueueItem<Consumer<PApplet>>>((a, b) -> {
-            return a.getPriority() - b.getPriority();
-        });
+        this.drawQueue = new PriorityQueue<>(Comparator.comparingInt(QueueItem::getPriority));
         System.out.println("i'm ran");
         instance = this;
     }
