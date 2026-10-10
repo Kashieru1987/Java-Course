@@ -1,22 +1,44 @@
+import Util.QueueItem;
 import processing.core.PApplet;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.PriorityQueue;
+import java.util.Queue;
+import java.util.function.Consumer;
 
 public class Panel extends PApplet {
 
-    final String title;
-    final int width;
-    final int height;
+    public volatile static Panel instance;
+    private Queue<QueueItem<Consumer<PApplet>>> drawQueue;
+
+    public void addToDrawQueue(QueueItem<Consumer<PApplet>> item) {
+        drawQueue.add(item);
+    }
 
     public Panel() {
+        this.drawQueue = new PriorityQueue<QueueItem<Consumer<PApplet>>>((a, b) -> {
+            return a.getPriority() - b.getPriority();
+        });
+        System.out.println("i'm ran");
+        instance = this;
+    }
+
+    @Override
+    public void draw() {
+        for(QueueItem<Consumer<PApplet>> event : this.drawQueue) {
+            event.getItem().accept(this);
+        }
     }
 
     @Override
     public void setup() {
-        this.surface.setTitle(title);
+        this.surface.setTitle(Settings.GAME.TITLE);
     }
 
     @Override
     public void settings() {
-        this.size(width, height);
+        this.size(Settings.GAME.WIDTH, Settings.GAME.HEIGHT);
     }
 
 }
