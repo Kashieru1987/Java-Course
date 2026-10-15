@@ -2,22 +2,24 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Processing/Week 1/Exercise 1/Exercise 1.iml" filepath="$PROJECT_DIR$/Processing/Week 1/Exercise 1/Exercise 1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Processing/Week 1/Exercise 2/Exercise 2.iml" filepath="$PROJECT_DIR$/Processing/Week 1/Exercise 2/Exercise 2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Processing/Week 1/Exercise 3/Exercise 3.iml" filepath="$PROJECT_DIR$/Processing/Week 1/Exercise 3/Exercise 3.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Processing/Week 1/Exercise 4/Exercise 4.iml" filepath="$PROJECT_DIR$/Processing/Week 1/Exercise 4/Exercise 4.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Processing/Week 1/Exercise 5/Exercise 5.iml" filepath="$PROJECT_DIR$/Processing/Week 1/Exercise 5/Exercise 5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Y1S1/Week1_Variables/Exercise 1/Exercise 1.iml" filepath="$PROJECT_DIR$/Y1S1/Week1_Variables/Exercise 1/Exercise 1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Y1S1/Week1_Variables/Exercise 2/Exercise 2.iml" filepath="$PROJECT_DIR$/Y1S1/Week1_Variables/Exercise 2/Exercise 2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Y1S1/Week1_Variables/Exercise 3/Exercise 3.iml" filepath="$PROJECT_DIR$/Y1S1/Week1_Variables/Exercise 3/Exercise 3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Y1S1/Week1_Variables/Exercise 4/Exercise 4.iml" filepath="$PROJECT_DIR$/Y1S1/Week1_Variables/Exercise 4/Exercise 4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Y1S1/Week1_Variables/Exercise 5/Exercise 5.iml" filepath="$PROJECT_DIR$/Y1S1/Week1_Variables/Exercise 5/Exercise 5.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Java-Course.iml" filepath="$PROJECT_DIR$/.idea/Java-Course.iml" />
       <module fileurl="file://$PROJECT_DIR$/Leetcode/Leetcode.iml" filepath="$PROJECT_DIR$/Leetcode/Leetcode.iml" />
       <module fileurl="file://$PROJECT_DIR$/Leetcode/Leetcode0001/Leetcode0001.iml" filepath="$PROJECT_DIR$/Leetcode/Leetcode0001/Leetcode0001.iml" />
       <module fileurl="file://$PROJECT_DIR$/Leetcode/Leetcode0002/Leetcode0002.iml" filepath="$PROJECT_DIR$/Leetcode/Leetcode0002/Leetcode0002.iml" />
       <module fileurl="file://$PROJECT_DIR$/Leetcode/Leetcode0003/Leetcode0003.iml" filepath="$PROJECT_DIR$/Leetcode/Leetcode0003/Leetcode0003.iml" />
       <module fileurl="file://$PROJECT_DIR$/Leetcode/Leetcode0004/Leetcode0004.iml" filepath="$PROJECT_DIR$/Leetcode/Leetcode0004/Leetcode0004.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Y1S1/Week2_Loops_If/Page11 Exercise/Page11 Exercise.iml" filepath="$PROJECT_DIR$/Y1S1/Week2_Loops_If/Page11 Exercise/Page11 Exercise.iml" />
       <module fileurl="file://$PROJECT_DIR$/Processing/Processing.iml" filepath="$PROJECT_DIR$/Processing/Processing.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Processing/Week 1/Snake/Snake.iml" filepath="$PROJECT_DIR$/Processing/Week 1/Snake/Snake.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Processing/Week 1/Traffic Lights/Traffic Lights.iml" filepath="$PROJECT_DIR$/Processing/Week 1/Traffic Lights/Traffic Lights.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Processing/Week 1/Transform 2D/Transform 2D.iml" filepath="$PROJECT_DIR$/Processing/Week 1/Transform 2D/Transform 2D.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Processing/Week 1/Week 1.iml" filepath="$PROJECT_DIR$/Processing/Week 1/Week 1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Y1S1/Week1_Variables/Snake/Snake.iml" filepath="$PROJECT_DIR$/Y1S1/Week1_Variables/Snake/Snake.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Y1S1/Week1_Variables/Traffic Lights/Traffic Lights.iml" filepath="$PROJECT_DIR$/Y1S1/Week1_Variables/Traffic Lights/Traffic Lights.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Y1S1/Week1_Variables/Transform 2D/Transform 2D.iml" filepath="$PROJECT_DIR$/Y1S1/Week1_Variables/Transform 2D/Transform 2D.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Y1S1/Week2_Loops_If/Week2_Loops_If.iml" filepath="$PROJECT_DIR$/Y1S1/Week2_Loops_If/Week2_Loops_If.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Y1S1/Y1S1.iml" filepath="$PROJECT_DIR$/Y1S1/Y1S1.iml" />
     </modules>
   </component>
 </project>
