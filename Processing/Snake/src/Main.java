@@ -23,6 +23,7 @@ public class Main {
     }
 
     private Main() {
+        System.setProperty("sun.java2d.uiScale", "1"); // fix processing hating scaling
         PApplet.main("Panel");
         this.setPanel(Panel.instance);
         panel.addToDrawQueue(GameView::drawGameBoard);
