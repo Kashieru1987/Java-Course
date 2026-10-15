@@ -11,11 +11,12 @@ public final class Settings {
     public final static class BLOCKS {
         public final static int COUNT_WIDE = 10;
         public final static int COUNT_HIGH = 10;
-        public final static int DIAMETER = 25;
-        public final static int PADDING = 2;
+        public final static int DIAMETER = 40;
+        public final static int PADDING = 3;
         public final static int TOTAL_WIDTH;
         public final static int TOTAL_HEIGHT;
         public final static Color BACKGROUND_COLOR = Color.BLACK;
+        public final static Color EMPTY_COLOR = Color.GRAY;
 
         static {
             final int diameterWidth = DIAMETER * COUNT_WIDE;

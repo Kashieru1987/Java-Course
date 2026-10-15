@@ -21,7 +21,6 @@ public class Panel extends PApplet {
 
     public Panel() {
         this.drawQueue = new PriorityQueue<>(Comparator.comparingInt(QueueItem::getPriority));
-        System.out.println("i'm ran");
         instance = this;
     }
 
@@ -35,6 +34,7 @@ public class Panel extends PApplet {
     @Override
     public void setup() {
         this.surface.setTitle(Settings.GAME.TITLE);
+        this.background(Settings.GAME.BACKGROUND_COLOR.getRGB());
     }
 
     @Override

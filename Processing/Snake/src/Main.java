@@ -26,6 +26,7 @@ public class Main {
         PApplet.main("Panel");
         this.setPanel(Panel.instance);
         panel.addToDrawQueue(GameView::drawGameBoard);
+        panel.addToDrawQueue(GameView::drawEmptyBlocks);
     }
 
     public static void main(String[] args) {
