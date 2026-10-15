@@ -70,7 +70,19 @@ public class Main extends PApplet {
     }
 
     public void drawD(int x, int y) {
+        pushMatrix();
+        translate(x, y);
+        translate(0, 100);
 
+        final int m = 2;
+        final int intersect = 5;
+
+        strokeWeight(3);
+        for(int xVal = 0; xVal < 50; xVal++) {
+            point(xVal, (xVal * m + intersect)*-1);
+        }
+
+        popMatrix();
     }
 
     public static void main(String[] args) {
