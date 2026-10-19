@@ -1,5 +1,7 @@
+package Game;
+
+import Util.Cell;
 import Util.QueueItem;
-import androidx.compose.material.icons.sharp._10kKt;
 import processing.core.PApplet;
 
 import java.util.function.Consumer;
@@ -48,14 +50,15 @@ public class GameView {
                     if(Settings.GAME.DEBUG_MODE)
                         panel.fill(emptyBlockColor); // empty blocks do not need to be visible
                     for(int i = 0; i < high; i++)
-                        drawRow(panel, i*(blockWidth + padding));
+                        drawRow(panel, i);
                     panel.popMatrix();
                 }, 1
         );
     }
 
-    private static void drawRow(PApplet panel, int y) {
+    private static void drawRow(PApplet panel, int row) {
         panel.pushMatrix();
+        final int y = row * (blockWidth+padding);
         panel.translate(0, y);
 
         for(int i = 0; i < wide; i++) {
@@ -64,6 +67,9 @@ public class GameView {
         }
 
         panel.popMatrix();
+    }
+
+    private static void drawCell(PApplet panel, Cell cell) {
     }
 
 }

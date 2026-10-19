@@ -1,3 +1,5 @@
+package Game;
+
 import processing.core.PApplet;
 
 public class Main {
@@ -24,7 +26,7 @@ public class Main {
 
     private Main() {
         System.setProperty("sun.java2d.uiScale", "1"); // fix processing hating scaling
-        PApplet.main("Panel");
+        PApplet.main("Game.Panel");
         this.setPanel(Panel.instance);
         panel.addToDrawQueue(GameView::drawGameBoard);
         panel.addToDrawQueue(GameView::drawEmptyBlocks);

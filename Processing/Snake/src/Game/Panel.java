@@ -1,3 +1,5 @@
+package Game;
+
 import Util.QueueItem;
 import processing.core.PApplet;
 

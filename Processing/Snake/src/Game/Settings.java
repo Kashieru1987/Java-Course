@@ -1,5 +1,6 @@
+package Game;
+
 import java.awt.*;
-import java.util.function.Supplier;
 
 public final class Settings {
     public final static class GAME {
