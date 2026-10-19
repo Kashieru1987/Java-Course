@@ -36,7 +36,9 @@ public class GameView {
                     panel.pushMatrix();
                     panel.translate(pivotX, pivotY);
                     panel.translate(padding, padding);
-                    panel.fill(emptyBlockColor);
+                    panel.fill(boardBackgroundColor); // empty blocks do not need to be visible
+                    if(Settings.GAME.DEBUG_MODE)
+                        panel.fill(emptyBlockColor); // empty blocks do not need to be visible
                     for(int i = 0; i < high; i++)
                         drawRow(panel, i*(blockWidth + padding));
                     panel.popMatrix();
