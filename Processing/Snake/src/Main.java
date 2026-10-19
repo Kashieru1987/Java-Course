@@ -2,10 +2,10 @@ import processing.core.PApplet;
 
 public class Main {
 
-    public volatile static Main instance;
-    public Panel panel;
+    private volatile static Main instance;
+    private Panel panel;
 
-    public void setPanel(Panel panel) {
+    private void setPanel(Panel panel) {
         this.panel = panel;
     }
 
