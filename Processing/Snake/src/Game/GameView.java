@@ -46,30 +46,47 @@ public class GameView {
                     panel.pushMatrix();
                     panel.translate(pivotX, pivotY);
                     panel.translate(padding, padding);
-                    panel.fill(boardBackgroundColor); // empty blocks do not need to be visible
-                    if(Settings.GAME.DEBUG_MODE)
-                        panel.fill(emptyBlockColor); // empty blocks do not need to be visible
+
                     for(int i = 0; i < high; i++)
-                        drawRow(panel, i);
+                        drawEmptyRow(panel, i);
+
                     panel.popMatrix();
                 }, 1
         );
     }
 
-    private static void drawRow(PApplet panel, int row) {
+    private static void drawEmptyRow(PApplet panel, int row) {
         panel.pushMatrix();
-        final int y = row * (blockWidth+padding);
-        panel.translate(0, y);
 
         for(int i = 0; i < wide; i++) {
-            int x = i * (padding + blockWidth);
-            panel.rect(x, 0, blockWidth, blockWidth);
+            drawCell(panel, new Cell(i, row));
+
+            if(!Settings.GAME.DEBUG_MODE)
+                continue;
+            final int rgb = Settings.BLOCKS.EMPTY_COLOR.getRGB();
+            drawCell(panel, new Cell(i, row, rgb));
         }
 
         panel.popMatrix();
     }
 
+    /**
+     * draws a cell, requires pivoting to the start of the board before being called
+     * @param panel
+     * @param cell
+     */
     private static void drawCell(PApplet panel, Cell cell) {
+        panel.pushMatrix();
+
+        final int factor = padding + blockWidth;
+        final int x = factor * cell.getColumn();
+        final int y = factor * cell.getRow();
+        final int rgb = cell.getRGB();
+
+        panel.fill(rgb);
+        panel.rect(x, y, blockWidth, blockWidth);
+
+        panel.popMatrix();
     }
 
 }

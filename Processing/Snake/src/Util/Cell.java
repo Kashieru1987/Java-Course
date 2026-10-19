@@ -17,4 +17,16 @@ public class Cell {
         this.rgb = rgb;
     }
 
+    public int getColumn() {
+        return this.column;
+    }
+
+    public int getRow() {
+        return this.row;
+    }
+
+    public int getRGB() {
+        return this.rgb;
+    }
+
 }
