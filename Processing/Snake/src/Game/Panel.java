@@ -44,4 +44,10 @@ public class Panel extends PApplet {
         this.size(Settings.GAME.WIDTH, Settings.GAME.HEIGHT);
     }
 
+    public void keyPressed() {
+    }
+
+    public void keyReleased() {
+    }
+
 }

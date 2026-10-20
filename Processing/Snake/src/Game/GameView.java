@@ -14,7 +14,7 @@ public class GameView {
     private static final int boardHeight = Settings.BLOCKS.TOTAL_HEIGHT;
     private static final int boardBackgroundColor = Settings.BLOCKS.BACKGROUND_COLOR.getRGB();
     private static final int emptyBlockColor = Settings.BLOCKS.EMPTY_COLOR.getRGB();
-    private static final int snakeColor = Settings.BLOCKS.SNAKE_COLOR.getRGB();
+//    private static final int snakeColor = Settings.BLOCKS.SNAKE_COLOR.getRGB();
     private static final int pivotX = gameWidth/2 - boardWidth/2;
     private static final int pivotY = gameHeight/2 - boardHeight/2;
     private static final int padding = Settings.BLOCKS.PADDING;
@@ -63,8 +63,8 @@ public class GameView {
                     panel.pushMatrix();
                     panel.translate(pivotX, pivotY);
                     panel.translate(padding, padding);
-                    final List<Cell> snake = Main.getInstance().getSnake();
-                    for(Cell cell : snake)
+                    final Snake snake = Main.getInstance().getSnake();
+                    for(Cell cell : snake.getPositions())
                         drawCell(panel, cell);
                     panel.popMatrix();
                 }, 2
