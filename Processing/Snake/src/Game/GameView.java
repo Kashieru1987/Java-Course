@@ -4,6 +4,7 @@ import Util.Cell;
 import Util.QueueItem;
 import processing.core.PApplet;
 
+import java.util.List;
 import java.util.function.Consumer;
 
 public class GameView {
@@ -13,6 +14,7 @@ public class GameView {
     private static final int boardHeight = Settings.BLOCKS.TOTAL_HEIGHT;
     private static final int boardBackgroundColor = Settings.BLOCKS.BACKGROUND_COLOR.getRGB();
     private static final int emptyBlockColor = Settings.BLOCKS.EMPTY_COLOR.getRGB();
+    private static final int snakeColor = Settings.BLOCKS.SNAKE_COLOR.getRGB();
     private static final int pivotX = gameWidth/2 - boardWidth/2;
     private static final int pivotY = gameHeight/2 - boardHeight/2;
     private static final int padding = Settings.BLOCKS.PADDING;
@@ -55,6 +57,19 @@ public class GameView {
         );
     }
 
+    public static QueueItem<Consumer<PApplet>> drawSnake() {
+        return new QueueItem<>(
+                panel -> {
+                    panel.pushMatrix();
+                    panel.translate(pivotX, pivotY);
+                    final List<Cell> snake = null;
+                    for(Cell cell : snake)
+                        drawCell(panel, cell);
+                    panel.popMatrix();
+                }, 2
+        );
+    }
+
     private static void drawEmptyRow(PApplet panel, int row) {
         panel.pushMatrix();
 
@@ -63,7 +78,7 @@ public class GameView {
 
             if(!Settings.GAME.DEBUG_MODE)
                 continue;
-            final int rgb = Settings.BLOCKS.EMPTY_COLOR.getRGB();
+            final int rgb = emptyBlockColor;
             drawCell(panel, new Cell(i, row, rgb));
         }
 

@@ -30,6 +30,7 @@ public class Main {
         this.setPanel(Panel.instance);
         panel.addToDrawQueue(GameView::drawGameBoard);
         panel.addToDrawQueue(GameView::drawEmptyBlocks);
+        panel.addToDrawQueue(GameView::drawSnake);
     }
 
     public static void main(String[] args) {

@@ -19,6 +19,7 @@ public final class Settings {
         public final static int TOTAL_HEIGHT;
         public final static Color BACKGROUND_COLOR = Color.BLACK;
         public final static Color EMPTY_COLOR = Color.GRAY;
+        public final static Color SNAKE_COLOR = Color.GREEN;
 
         static {
             final int diameterWidth = DIAMETER * COUNT_WIDE;
