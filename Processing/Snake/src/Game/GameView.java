@@ -62,7 +62,8 @@ public class GameView {
                 panel -> {
                     panel.pushMatrix();
                     panel.translate(pivotX, pivotY);
-                    final List<Cell> snake = null;
+                    panel.translate(padding, padding);
+                    final List<Cell> snake = Main.getInstance().getSnake();
                     for(Cell cell : snake)
                         drawCell(panel, cell);
                     panel.popMatrix();
