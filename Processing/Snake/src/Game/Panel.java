@@ -11,6 +11,7 @@ public class Panel extends PApplet {
 
     public volatile static Panel instance;
     private Queue<QueueItem<Consumer<PApplet>>> drawQueue;
+    private InputHandler inputHandler;
 
 
     public void addToDrawQueue(Supplier<QueueItem<Consumer<PApplet>>> item) {
@@ -28,6 +29,7 @@ public class Panel extends PApplet {
 
     @Override
     public void draw() {
+        Main.getInstance().getInputHandler().handleInputs();
         for(QueueItem<Consumer<PApplet>> event : this.drawQueue) {
             event.getItem().accept(this);
         }
@@ -36,6 +38,7 @@ public class Panel extends PApplet {
     @Override
     public void setup() {
         this.surface.setTitle(Settings.GAME.TITLE);
+        this.frameRate(Settings.GAME.SNAKE_SPEED);
         this.background(Settings.GAME.BACKGROUND_COLOR.getRGB());
     }
 
@@ -45,9 +48,15 @@ public class Panel extends PApplet {
     }
 
     public void keyPressed() {
+        this.inputHandler.keyPressed(key);
     }
 
     public void keyReleased() {
+        this.inputHandler.keyReleased(key);
+    }
+
+    public void setInputHandler(InputHandler inputHandler) {
+        this.inputHandler = inputHandler;
     }
 
 }

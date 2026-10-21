@@ -1,23 +1,20 @@
 package Game;
 
-import Util.Cell;
 import processing.core.PApplet;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
 
     private volatile static Main instance;
-    private Panel panel;
-    private Snake snake;
-
-    private void setPanel(Panel panel) {
-        this.panel = panel;
-    }
+    private final InputHandler inputHandler;
+    private final Panel panel;
+    private final Snake snake;
 
     public Snake getSnake() {
         return this.snake;
+    }
+
+    public InputHandler getInputHandler() {
+        return this.inputHandler;
     }
 
     public static Main getInstance() {
@@ -38,8 +35,11 @@ public class Main {
         PApplet.main("Game.Panel");
 
         this.snake = new Snake();
+        this.panel = Panel.instance;
 
-        this.setPanel(Panel.instance);
+        this.inputHandler = new InputHandler();
+        this.panel.setInputHandler(inputHandler);
+
         panel.addToDrawQueue(GameView::drawGameBoard);
         panel.addToDrawQueue(GameView::drawEmptyBlocks);
         panel.addToDrawQueue(GameView::drawSnake);

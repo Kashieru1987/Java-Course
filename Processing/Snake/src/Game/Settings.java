@@ -5,6 +5,7 @@ import java.awt.*;
 public final class Settings {
     public final static class GAME {
         public final static boolean DEBUG_MODE = false;
+        public final static int SNAKE_SPEED = 2;
         public final static String TITLE = "Kashieru1987 - Snake";
         public final static int WIDTH = 500;
         public final static int HEIGHT = 500;
