@@ -19,9 +19,22 @@ public class Main extends PApplet {
     @Override
     public void draw() {
         pushMatrix();
+
+        drawCarRow(0, 50);
+        drawCarRow(150, 100);
+
+        popMatrix();
+    }
+
+    public void drawCarRow(int y, int size) {
+        pushMatrix();
         translate(padding, padding);
 
-        drawCar(0, 0, 100);
+        final int carWidth = size*2;
+
+        for(int i = 0; i + carWidth + padding < panelWidth; i += carWidth + padding) {
+            drawCar(i, y, size);
+        }
 
         popMatrix();
     }
@@ -29,14 +42,16 @@ public class Main extends PApplet {
     public void drawCar(int x, int y, int size) {
         pushMatrix();
         translate(x, y);
-
         final float widthHead = size;
         final float widthBody = widthHead * 2;
 
+        stroke(0);
+        fill(0, 0, 255);
         rect(widthHead/2, 0, widthHead, widthHead); //head
+        fill(255, 0, 0);
         rect(0, widthHead, widthBody, widthHead); //body
-        textSize(size);
-        text(labelText, 0, widthHead);
+
+        drawText((int) widthHead);
 
         drawWheel((int) (widthHead/2), (int) (widthHead*2), size/4);
         drawWheel((int) (widthHead/2 + widthHead), (int) (widthHead*2), size/4);
@@ -44,9 +59,20 @@ public class Main extends PApplet {
         popMatrix();
     }
 
+    public void drawText(int widthHead) {
+        stroke(0);
+        fill(0);
+        textSize((float) widthHead /3);
+        text(labelText, 0, widthHead + (float) widthHead /2);
+    }
+
+    public void drawBody() {
+    }
+
     public void drawWheel(int x, int y, int size) {
         pushMatrix();
         translate(x, y);
+        fill(255);
 
         strokeWeight((float) size/3);
         circle(0, 0, size);
