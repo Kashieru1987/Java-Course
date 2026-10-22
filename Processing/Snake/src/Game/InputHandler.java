@@ -7,35 +7,35 @@ import java.util.List;
 
 public class InputHandler implements InputListener {
 
-    private final List<String> pressedKeys;
-    private final List<String> releasedKeys;
+    private final List<String> inputQueue;
 
     public InputHandler() {
-        this.pressedKeys = new ArrayList<String>();
-        this.releasedKeys = new ArrayList<String>();
+        this.inputQueue = new ArrayList<String>();
     }
 
     public void handleInputs() {
-        System.out.println(pressedKeys);
+        System.out.println(inputQueue);
 
-        for(String key : releasedKeys)
-            pressedKeys.remove(key);
+        if(inputQueue.isEmpty())
+            return;
+
+        inputQueue.removeFirst();
     }
 
     @Override
     public void keyPressed(char key) {
         final String character = "" + key;
-        if(pressedKeys.contains(character))
-            return;
-        pressedKeys.add(character);
+        if(!inputQueue.isEmpty())
+            if(inputQueue.getLast().equals(character))
+                return;
+        inputQueue.add(character);
+
+        if(inputQueue.size() > 3) {
+            inputQueue.removeFirst();
+        }
     }
 
     @Override
     public void keyReleased(char key) {
-        final String character = "" + key;
-        if(releasedKeys.contains(character))
-            return;
-        releasedKeys.add(character);
     }
-
 }
