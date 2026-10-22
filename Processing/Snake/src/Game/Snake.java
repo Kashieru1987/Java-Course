@@ -27,6 +27,33 @@ public class Snake {
 
         positions.add(new Cell(x, y, rgb));
         positions.add(new Cell(x-1, y, rgb));
+        positions.add(new Cell(x-2, y, rgb));
+    }
+
+    public void updateSnake() {
+        moveSnake();
+        checkCollisions();
+    }
+
+    private void moveSnake() {
+        int deltaX = 0;
+        int deltaY = 0;
+        switch(direction) {
+            case NORTH -> deltaY--;
+            case EAST -> deltaX++;
+            case SOUTH -> deltaY++;
+            case WEST -> deltaX--;
+        }
+        for(int i = positions.size()-1; i > 0; i--) {
+            positions.set(i, positions.get(i-1));
+        }
+        final Cell previous = positions.getFirst();
+        final int lastX = previous.getColumn();
+        final int lastY = previous.getRow();
+        positions.set(0, new Cell(lastX + deltaX, lastY + deltaY, rgb));
+    }
+
+    public void checkCollisions() {
     }
 
     public List<Cell> getPositions() {

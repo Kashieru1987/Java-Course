@@ -16,12 +16,14 @@ public class InputHandler implements InputListener {
 
     public void handleInputs() {
         System.out.println(inputQueue);
+        final Snake snake = Main.getInstance().getSnake();
 
-        if(inputQueue.isEmpty())
+        if(inputQueue.isEmpty()) {
+            snake.updateSnake();
             return;
+        }
 
         final String input = inputQueue.removeFirst();
-        final Snake snake = Main.getInstance().getSnake();
         final Directions direction = snake.getDirection();
         switch(input.toUpperCase()) {
             case "W" -> {
@@ -30,9 +32,9 @@ public class InputHandler implements InputListener {
                 snake.setDirection(Directions.NORTH);
             }
             case "A" -> {
-                if(direction.equals(Directions.WEST))
+                if(direction.equals(Directions.EAST))
                     return;
-                snake.setDirection(Directions.EAST);
+                snake.setDirection(Directions.WEST);
             }
             case "S" -> {
                 if(direction.equals(Directions.NORTH))
@@ -40,11 +42,12 @@ public class InputHandler implements InputListener {
                 snake.setDirection(Directions.SOUTH);
             }
             case "D" -> {
-                if(direction.equals(Directions.EAST))
+                if(direction.equals(Directions.WEST))
                     return;
-                snake.setDirection(Directions.WEST);
+                snake.setDirection(Directions.EAST);
             }
         }
+        snake.updateSnake();
     }
 
     @Override
