@@ -1,17 +1,20 @@
 package Game;
 
 import Util.Cell;
+import Util.Directions;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Snake {
-    final List<Cell> positions;
-    final int rgb;
+    private final List<Cell> positions;
+    private final int rgb;
+    private Directions direction;
 
     public Snake() {
         this.rgb = Settings.BLOCKS.SNAKE_COLOR.getRGB();
         this.positions = new ArrayList<Cell>();
+        this.direction = Directions.EAST;
 
         this.initSnakePositions();
     }
@@ -28,6 +31,15 @@ public class Snake {
 
     public List<Cell> getPositions() {
         return this.positions;
+    }
+
+    public Directions getDirection() {
+        return this.direction;
+    }
+
+    public void setDirection(Directions direction) {
+        this.direction = direction;
+        System.out.println("Direction set to " + direction);
     }
 
 }

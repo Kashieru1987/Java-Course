@@ -1,5 +1,6 @@
 package Game;
 
+import Util.Directions;
 import Util.InputListener;
 
 import java.util.ArrayList;
@@ -19,7 +20,31 @@ public class InputHandler implements InputListener {
         if(inputQueue.isEmpty())
             return;
 
-        inputQueue.removeFirst();
+        final String input = inputQueue.removeFirst();
+        final Snake snake = Main.getInstance().getSnake();
+        final Directions direction = snake.getDirection();
+        switch(input.toUpperCase()) {
+            case "W" -> {
+                if(direction.equals(Directions.SOUTH))
+                    return;
+                snake.setDirection(Directions.NORTH);
+            }
+            case "A" -> {
+                if(direction.equals(Directions.WEST))
+                    return;
+                snake.setDirection(Directions.EAST);
+            }
+            case "S" -> {
+                if(direction.equals(Directions.NORTH))
+                    return;
+                snake.setDirection(Directions.SOUTH);
+            }
+            case "D" -> {
+                if(direction.equals(Directions.EAST))
+                    return;
+                snake.setDirection(Directions.WEST);
+            }
+        }
     }
 
     @Override
