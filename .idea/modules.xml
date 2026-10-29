@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Y1S1/Week4_Animation/BouncingBalls/BouncingBalls.iml" filepath="$PROJECT_DIR$/Y1S1/Week4_Animation/BouncingBalls/BouncingBalls.iml" />
       <module fileurl="file://$PROJECT_DIR$/Y1S1/Week1_Variables/Exercise 1/Exercise 1.iml" filepath="$PROJECT_DIR$/Y1S1/Week1_Variables/Exercise 1/Exercise 1.iml" />
       <module fileurl="file://$PROJECT_DIR$/Y1S1/Week1_Variables/Exercise 2/Exercise 2.iml" filepath="$PROJECT_DIR$/Y1S1/Week1_Variables/Exercise 2/Exercise 2.iml" />
       <module fileurl="file://$PROJECT_DIR$/Y1S1/Week1_Variables/Exercise 3/Exercise 3.iml" filepath="$PROJECT_DIR$/Y1S1/Week1_Variables/Exercise 3/Exercise 3.iml" />
@@ -28,6 +29,7 @@
       <module fileurl="file://$PROJECT_DIR$/Y1S1/Week1_Variables/Transform 2D/Transform 2D.iml" filepath="$PROJECT_DIR$/Y1S1/Week1_Variables/Transform 2D/Transform 2D.iml" />
       <module fileurl="file://$PROJECT_DIR$/Y1S1/Week2_Loops_If/Week2_Loops_If.iml" filepath="$PROJECT_DIR$/Y1S1/Week2_Loops_If/Week2_Loops_If.iml" />
       <module fileurl="file://$PROJECT_DIR$/Y1S1/Week3_Functions/Week3_Functions.iml" filepath="$PROJECT_DIR$/Y1S1/Week3_Functions/Week3_Functions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Y1S1/Week4_Animation/Week4_Animation.iml" filepath="$PROJECT_DIR$/Y1S1/Week4_Animation/Week4_Animation.iml" />
       <module fileurl="file://$PROJECT_DIR$/Y1S1/Y1S1.iml" filepath="$PROJECT_DIR$/Y1S1/Y1S1.iml" />
     </modules>
   </component>
