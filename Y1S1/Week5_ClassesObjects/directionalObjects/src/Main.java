@@ -21,14 +21,15 @@ public class Main extends PApplet {
 //        new Bouncer(new PVector(50,150), new PVector(5, -5)).display();
 //        new Bouncer(new PVector(150,150), new PVector(-5, -5)).display();
         bouncers = new ArrayList<Bouncer>();
-        bouncers.add(new Bouncer(50, 50, 3, 3));
+        bouncers.add(new Bouncer(100, 100, 3, 3));
+        imageMode(CENTER);
     }
 
     @Override
     public void draw() {
         background(200);
         for(Bouncer bouncer : bouncers) {
-            bouncer.move();
+            bouncer.update();
             bouncer.display();
         }
     }

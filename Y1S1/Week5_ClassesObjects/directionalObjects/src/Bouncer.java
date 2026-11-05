@@ -29,13 +29,18 @@ public class Bouncer {
         setImage();
     }
 
+    public void update() {
+        handleWallCollisions();
+        move();
+    }
+
     public void display() {
         panel.image(image, position.x, position.y);
         panel.fill(255, 0, 0);
-        panel.text(text, position.x + 50, position.y + 50);
+        panel.text(text, position.x, position.y);
     }
 
-    public void move() {
+    private void move() {
         position.add(delta);
     }
 
@@ -58,12 +63,20 @@ public class Bouncer {
         }
     }
 
-    public void handleCollisions() {
-        handleWallCollisions();
-    }
-
     private void handleWallCollisions() {
+        final int width = panel.width;
+        final int height = panel.height;
+        final int imagePadding = 40;
 
+        if(position.x - imagePadding < 0 || position.x + imagePadding > width) {
+            delta.x = -delta.x;
+            setImage();
+        }
+
+        if(position.y - imagePadding < 0 || position.y + imagePadding > height) {
+            delta.y = -delta.y;
+            setImage();
+        }
     }
 
     private void getImages() {
