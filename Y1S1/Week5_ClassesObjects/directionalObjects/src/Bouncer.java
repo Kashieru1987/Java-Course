@@ -4,7 +4,6 @@ import processing.core.PVector;
 
 public class Bouncer {
 
-	public final int speed = 5;
 	public final String text = "MC25883357";
 	public PImage upLeft;
 	public PImage upRight;
