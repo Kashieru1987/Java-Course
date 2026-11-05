@@ -4,86 +4,86 @@ import processing.core.PVector;
 
 public class Bouncer {
 
-    public final int speed = 5;
-    public final String text = "MC25883357";
-    public PImage upLeft;
-    public PImage upRight;
-    public PImage downLeft;
-    public PImage downRight;
+	public final int speed = 5;
+	public final String text = "MC25883357";
+	public PImage upLeft;
+	public PImage upRight;
+	public PImage downLeft;
+	public PImage downRight;
 
-    public PApplet panel;
-    public PVector position;
-    public PVector delta;
-    public PImage image;
+	public PApplet panel;
+	public PVector position;
+	public PVector delta;
+	public PImage image;
 
-    public Bouncer(int x, int y, int deltaX, int deltaY) {
-        this(new PVector(x, y), new PVector(deltaX, deltaY));
-    }
+	public Bouncer(int x, int y, int deltaX, int deltaY) {
+		this(new PVector(x, y), new PVector(deltaX, deltaY));
+	}
 
-    public Bouncer(PVector position, PVector delta) {
-        this.panel = Main.instance;
-        this.position = position;
-        this.delta = delta;
+	public Bouncer(PVector position, PVector delta) {
+		this.panel = Main.instance;
+		this.position = position;
+		this.delta = delta;
 
-        this.getImages();
-        setImage();
-    }
+		this.getImages();
+		setImage();
+	}
 
-    public void update() {
-        handleWallCollisions();
-        move();
-    }
+	public void update() {
+		handleWallCollisions();
+		move();
+	}
 
-    public void display() {
-        panel.image(image, position.x, position.y);
-        panel.fill(255, 0, 0);
-        panel.text(text, position.x, position.y);
-    }
+	public void display() {
+		panel.image(image, position.x, position.y);
+		panel.fill(255, 0, 0);
+		panel.text(text, position.x, position.y);
+	}
 
-    private void move() {
-        position.add(delta);
-    }
+	private void move() {
+		position.add(delta);
+	}
 
-    private void setImage() {
-        boolean isUp = delta.y < 0;
-        boolean isRight = delta.x > 0;
+	private void setImage() {
+		boolean isUp = delta.y < 0;
+		boolean isRight = delta.x > 0;
 
-        if(isUp) {
-            if(isRight) {
-                image = upRight;
-            } else {
-                image = upLeft;
-            }
-        } else {
-            if(isRight) {
-                image = downRight;
-            } else {
-                image = downLeft;
-            }
-        }
-    }
+		if(isUp) {
+			if(isRight) {
+				image = upRight;
+			} else {
+				image = upLeft;
+			}
+		} else {
+			if(isRight) {
+				image = downRight;
+			} else {
+				image = downLeft;
+			}
+		}
+	}
 
-    private void handleWallCollisions() {
-        final int width = panel.width;
-        final int height = panel.height;
-        final int imagePadding = 40;
+	private void handleWallCollisions() {
+		final int width = panel.width;
+		final int height = panel.height;
+		final int imagePadding = 40;
 
-        if(position.x - imagePadding < 0 || position.x + imagePadding > width) {
-            delta.x = -delta.x;
-            setImage();
-        }
+		if(position.x - imagePadding < 0 || position.x + imagePadding > width) {
+			delta.x = -delta.x;
+			setImage();
+		}
 
-        if(position.y - imagePadding < 0 || position.y + imagePadding > height) {
-            delta.y = -delta.y;
-            setImage();
-        }
-    }
+		if(position.y - imagePadding < 0 || position.y + imagePadding > height) {
+			delta.y = -delta.y;
+			setImage();
+		}
+	}
 
-    private void getImages() {
-        upLeft = panel.loadImage("directions/upLeft.png");
-        upRight = panel.loadImage("directions/upRight.png");
-        downLeft = panel.loadImage("directions/downLeft.png");
-        downRight = panel.loadImage("directions/downRight.png");
-    }
+	private void getImages() {
+		upLeft = panel.loadImage("directions/upLeft.png");
+		upRight = panel.loadImage("directions/upRight.png");
+		downLeft = panel.loadImage("directions/downLeft.png");
+		downRight = panel.loadImage("directions/downRight.png");
+	}
 
 }
