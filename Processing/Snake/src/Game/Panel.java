@@ -9,6 +9,7 @@ import java.util.function.Supplier;
 
 public class Panel extends PApplet {
 
+    public int frame = 0;
     public volatile static Panel instance;
     private Queue<QueueItem<Consumer<PApplet>>> drawQueue;
     private InputHandler inputHandler;
@@ -29,6 +30,12 @@ public class Panel extends PApplet {
 
     @Override
     public void draw() {
+        final int snakeSpeed = Settings.GAME.SNAKE_SPEED;
+        final int tickRate = Settings.GAME.TICK_RATE;
+        frame++;
+        if(frame < snakeSpeed/tickRate)
+            return;
+        frame = 0;
         Main.getInstance().getInputHandler().handleInputs();
         for(QueueItem<Consumer<PApplet>> event : this.drawQueue) {
             event.getItem().accept(this);
