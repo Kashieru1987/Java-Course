@@ -33,6 +33,11 @@ public class Bouncer {
 		move();
 	}
 
+	public void bounce() {
+		this.delta = delta.mult(-1);
+		setImage();
+	}
+
 	public void display() {
 		panel.image(image, position.x, position.y);
 		panel.fill(255, 0, 0);
@@ -67,15 +72,30 @@ public class Bouncer {
 		final int height = panel.height;
 		final int imagePadding = 40;
 
-		if(position.x - imagePadding < 0 || position.x + imagePadding > width) {
+		if(position.x - imagePadding < 0) {
 			delta.x = -delta.x;
+			position.x = imagePadding;
 			setImage();
 		}
 
-		if(position.y - imagePadding < 0 || position.y + imagePadding > height) {
-			delta.y = -delta.y;
+		if(position.x + imagePadding > width) {
+			delta.x = -delta.x;
+			position.x = width - imagePadding;
 			setImage();
 		}
+
+		if(position.y - imagePadding < 0) {
+			delta.y = -delta.y;
+			position.y = imagePadding;
+			setImage();
+		}
+
+		if(position.y + imagePadding > height) {
+			delta.y = -delta.y;
+			position.y = height - imagePadding;
+			setImage();
+		}
+
 	}
 
 	private void getImages() {

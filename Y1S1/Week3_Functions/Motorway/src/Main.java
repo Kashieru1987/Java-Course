@@ -66,9 +66,6 @@ public class Main extends PApplet {
         text(labelText, 0, widthHead + (float) widthHead /2);
     }
 
-    public void drawBody() {
-    }
-
     public void drawWheel(int x, int y, int size) {
         pushMatrix();
         translate(x, y);
