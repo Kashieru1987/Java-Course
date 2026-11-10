@@ -33,7 +33,7 @@ public class Panel extends PApplet {
         final int snakeSpeed = Settings.GAME.SNAKE_SPEED;
         final int tickRate = Settings.GAME.TICK_RATE;
         frame++;
-        if(frame < snakeSpeed/tickRate)
+        if(frame < tickRate)
             return;
         frame = 0;
         Main.getInstance().getInputHandler().handleInputs();
