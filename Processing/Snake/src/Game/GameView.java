@@ -57,6 +57,13 @@ public class GameView {
         );
     }
 
+    public static QueueItem<Consumer<PApplet>> drawApple() {
+        return new QueueItem<>(
+                panel -> {
+                }, 2
+        );
+    }
+
     public static QueueItem<Consumer<PApplet>> drawSnake() {
         return new QueueItem<>(
                 panel -> {
@@ -67,7 +74,7 @@ public class GameView {
                     for(Cell cell : snake.getPositions())
                         drawCell(panel, cell);
                     panel.popMatrix();
-                }, 2
+                }, 3
         );
     }
 

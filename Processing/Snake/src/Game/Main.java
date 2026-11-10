@@ -42,6 +42,7 @@ public class Main {
 
         panel.addToDrawQueue(GameView::drawGameBoard);
         panel.addToDrawQueue(GameView::drawEmptyBlocks);
+        panel.addToDrawQueue(GameView::drawApple);
         panel.addToDrawQueue(GameView::drawSnake);
     }
 
