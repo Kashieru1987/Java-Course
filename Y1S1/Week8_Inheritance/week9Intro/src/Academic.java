@@ -1,14 +1,12 @@
-public class Academic {
-	public final String name;
-	public final int id;
+public class Academic extends Person {
 	public final String subject;
 
 	public Academic(String name, int id, String subject) {
-		this.name = name;
-		this.id = id;
+		super(name, id);
 		this.subject = subject;
 	}
 
+	@Override
 	public void display() {
 		System.out.println(name + " " + id + " " + subject);
 	}

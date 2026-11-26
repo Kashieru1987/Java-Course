@@ -1,15 +1,14 @@
-public class Student {
-	public final String name;
-	public final int id;
-	public final String department, degree;
+public class Student extends Person {
+	public final String department;
+	public final String degree;
 
 	public Student(String name, int id, String department, String degree) {
-		this.name = name;
-		this.id = id;
+		super(name, id);
 		this.department = department;
 		this.degree = degree;
 	}
 
+	@Override
 	public void display() {
 		System.out.println("Name : " + name);
 		System.out.println("id:"+id);
