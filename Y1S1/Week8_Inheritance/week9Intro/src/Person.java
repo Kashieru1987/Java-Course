@@ -7,10 +7,12 @@ public class Person {
 		this.id = id;
 	}
 
-	public void display() {
-		System.out.println("Name: " + name);
-		System.out.println("id: " + id);
+	@Override
+	public String toString() {
+		return "Person{" +
+				"name='" + name + '\'' +
+				", id=" + id +
+				'}';
 	}
-
 }
 

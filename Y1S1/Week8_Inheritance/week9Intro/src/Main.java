@@ -6,10 +6,10 @@ public class Main {
 
 	public Main() {
 		final Student student = new Student("Stu",10,"Computing","Cyber");
-		student.display();
+		System.out.println(student);
 
 		final Academic ali = new Academic("Ali",99,"Programming");
-		ali.display();
+		System.out.println(ali);
 	}
 
 }

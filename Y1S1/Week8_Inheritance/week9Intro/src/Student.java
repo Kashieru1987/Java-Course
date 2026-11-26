@@ -9,10 +9,12 @@ public class Student extends Person {
 	}
 
 	@Override
-	public void display() {
-		System.out.println("Name : " + name);
-		System.out.println("id:"+id);
-		System.out.println("Department : " + department);
-		System.out.println("Degree : " + degree);
+	public String toString() {
+		return "Student{" +
+				"name='" + name + '\'' +
+				", id=" + id +
+				", degree='" + degree + '\'' +
+				", department='" + department + '\'' +
+				'}';
 	}
 }

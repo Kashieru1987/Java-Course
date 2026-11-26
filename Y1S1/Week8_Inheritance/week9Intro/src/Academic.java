@@ -7,7 +7,11 @@ public class Academic extends Person {
 	}
 
 	@Override
-	public void display() {
-		System.out.println(name + " " + id + " " + subject);
+	public String toString() {
+		return "Academic{" +
+				"name='" + name + '\'' +
+				", id=" + id +
+				", subject='" + subject + '\'' +
+				'}';
 	}
 }
