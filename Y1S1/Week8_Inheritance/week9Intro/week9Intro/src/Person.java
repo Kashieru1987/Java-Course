@@ -1,15 +1,16 @@
 public class Person {
-        String name;
-        int id;
+	public final String name;
+	public final int id;
 
-        Person(String name, int id) {
-            this.name = name;
-            this.id = id;
-        }
-        void display() {
-            System.out.println("Name: " + name);
-            System.out.println("id: " + id);
-        }
+	public Person(String name, int id) {
+		this.name = name;
+		this.id = id;
+	}
+
+	public void display() {
+		System.out.println("Name: " + name);
+		System.out.println("id: " + id);
+	}
 
 }
 

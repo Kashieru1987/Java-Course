@@ -1,15 +1,15 @@
 public class Academic {
-    String name;
-    int id;
-    String subject;
+	public final String name;
+	public final int id;
+	public final String subject;
 
-    Academic(String name, int id, String subject) {
-        this.name = name;
-        this.id = id;
-        this.subject = subject;
-    }
+	public Academic(String name, int id, String subject) {
+		this.name = name;
+		this.id = id;
+		this.subject = subject;
+	}
 
-    void display() {
-        System.out.println(name + " " + id + " " + subject);
-    }
+	public void display() {
+		System.out.println(name + " " + id + " " + subject);
+	}
 }
